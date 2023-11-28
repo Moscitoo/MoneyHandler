@@ -1,6 +1,6 @@
 ### IntelliJ IDEA ###
-./out/
-./target/
+./out/*
+./target/*
 !**/src/main/**/out/
 !**/src/test/**/out/
 *.idea
