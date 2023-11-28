@@ -11,9 +11,8 @@ public class Engine  {
     private static int OPTION = 0;
 
     private static final int QUIT_NUMBER = 5;
-
+    public static String QUIT_MESSAGE = "Bye!";
     private final TransactionService transactionService;
-
 
     public Engine() {
         this.transactionService = new TransactionService();
@@ -43,9 +42,10 @@ public class Engine  {
                 transactionService.addTransaction();
                 break;
             case 4:
-                FileHandler.saveTransactions();
+                FileHandler.writeTransactionListToJsonFile(transactionService.getTransactionList());
                 break;
             case 5:
+                FileHandler.writeTransactionListToJsonFile(transactionService.getTransactionList());
                 quit();
                 break;
             default:
@@ -55,7 +55,7 @@ public class Engine  {
     }
 
     public void quit() {
-        System.out.println("Transactions saved.\nBye!");
+        System.out.println(QUIT_MESSAGE);
         System.exit(0);
     }
 }
