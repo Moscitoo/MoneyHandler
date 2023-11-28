@@ -31,7 +31,7 @@ public class FileHandler {
         try {
             reader.close();
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Unsuccessful file-reading!" + e.getMessage());
         }
         return new ArrayList<>(Arrays.asList(gson.fromJson(jsonArray, Transaction[].class)));
     }
@@ -43,9 +43,8 @@ public class FileHandler {
             writer.write(json);
             writer.close();
         } catch (IOException e) {
-            System.out.print(e.getMessage());
+            System.out.println("Unsuccessful file-writing!" + e.getMessage());
         }
-
         System.out.println(SUCCESSFUL_SAVE_MESSAGE);
     }
 }

@@ -38,6 +38,7 @@ public class TransactionService {
         if (AmountValidator.isAmountValid(amount)) {
             if (transactionName.equalsIgnoreCase(TransactionCategory.CREDITING.getName())) {
                 transactionList.add(new Transaction(TransactionCategory.CREDITING.getCategoryId(), amount, currencyID));
+                System.out.println(SUCCESS_MESSAGE);
 
             } else if (transactionName.equalsIgnoreCase(TransactionCategory.DEBITING.getName())) {
                 amount = amount * -1;
