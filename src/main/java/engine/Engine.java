@@ -2,9 +2,9 @@ package engine;
 
 import service.TransactionService;
 import utils.FileHandler;
+import utils.NumberValidator;
 import utils.PrintUtil;
 import utils.ScannerUtil;
-import utils.ValidUtil;
 
 public class Engine  {
 
@@ -23,7 +23,7 @@ public class Engine  {
         PrintUtil.printOptions();
         while (OPTION != QUIT_NUMBER) {
             System.out.print("\nChoose an option: ");
-            OPTION = ValidUtil.isIntegerValueValid(ScannerUtil.scanner.nextLine());
+            OPTION = NumberValidator.isIntegerValueValid(ScannerUtil.scanner.nextLine());
             executeOption(OPTION);
         }
     }

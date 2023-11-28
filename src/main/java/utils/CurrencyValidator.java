@@ -4,17 +4,12 @@ import enums.CurrencyID;
 
 public class CurrencyValidator {
 
-    public static String errorMessage = "Érvénytelen valuta. Alapértelmezett érték: HUF";
+    public static String ERROR_MESSAGE = "Invalid currency. Default value set to: HUF";
 
-    public static boolean validateCurrency(CurrencyID currencyId) {
-
-        switch (currencyId) {
-            case HUF, USD, EUR, GBP:
-                return true;
-            default: {
-                System.out.println(errorMessage);
-                return false;
-            }
-        }
+    public static boolean isCurrencyValid(String currencyId) {
+        return currencyId.equalsIgnoreCase(CurrencyID.HUF.toString()) ||
+                currencyId.equalsIgnoreCase(CurrencyID.USD.toString()) ||
+                currencyId.equalsIgnoreCase(CurrencyID.EUR.toString()) ||
+                currencyId.equalsIgnoreCase(CurrencyID.GBP.toString());
     }
 }

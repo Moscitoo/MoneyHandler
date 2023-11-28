@@ -6,6 +6,8 @@ import java.util.Map;
 
 public class CurrencyContainer {
 
+    public static CurrencyID DEFAULT_CURRENCY = CurrencyID.HUF;
+
     public static Map<CurrencyID, Double> currencyMultiplierMap = Map.of(
             CurrencyID.HUF, 1.0,
             CurrencyID.USD, 348.0,
